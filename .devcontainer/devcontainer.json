@@ -1,0 +1,45 @@
+{
+    "name": "Ubuntu 22.04",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:1": {
+        "installZsh": true,
+        "username": "vscode",
+        "uid": "1000",
+        "gid": "1000",
+        "upgradePackages": true
+      },
+      "ghcr.io/devcontainers/features/github-cli:1": {
+      },
+    
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "lts"
+      },
+      "ghcr.io/devcontainers/features/aws-cli:1": {},
+      "ghcr.io/devcontainers/features/python:1": {
+        "version": "3.11"
+      }
+    },
+    "remoteUser": "vscode",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-azuretools.vscode-docker",
+          "PKief.material-icon-theme",
+          "RobbOwen.synthwave-vscode"
+        ]
+      }
+    },
+    "remoteEnv": {
+      "GIT_USERNAME": "obahamondeglobant",
+      "GIT_EMAIL": "o.bahamonde@globant.com",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1"
+    },
+    "mounts": [
+      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "runArgs": ["--init"]
+  }
